@@ -4,6 +4,7 @@
 #define Hanoi_h
 #include <string>
 #include <sstream>
+#include <vector>
 using namespace std;
 
 class Hanoi {
@@ -14,6 +15,9 @@ private:
    // level of nesting within std::vectors to put each string
    // of moves. You should be able to access the cache like so:
    // _cache[num_discs][src][dst] = "move1\nmove2\n..."
+
+   vector<vector<vector<string>>> _cache;
+
    std::string lookup_moves(int num_discs, int src, int dst);
    std::string get_moves(int num_discs, int src, int dst, int tmp);
 public:

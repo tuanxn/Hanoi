@@ -26,4 +26,4 @@ public:
    friend class Tests; // Don't remove this line
 };
 
-#endif Hanoi_h
+#endif

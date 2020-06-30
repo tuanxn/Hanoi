@@ -17,6 +17,10 @@ int main()
 
 
 std::string Hanoi::lookup_moves(int num_discs, int src, int dst) {
+   if (_cache.empty()) {
+      return "";
+   }
+
    if (_cache[num_discs][src][dst] != "") {
       return _cache[num_discs][src][dst];
    }
@@ -69,15 +73,15 @@ std::string Hanoi::solve(int num_discs, int src, int dst, int tmp) {
    string output = "# Below, 'A->B' means 'move the top disc on pole A to pole B'\n";
    output += get_moves(num_discs, src, dst, tmp);
 
-   for (int i = 0; i <= num_discs; i++) {
-      cout << "disc:" + to_string(i) + " ";
-      for (int j = 0; j < 4; j++) {
-         cout << "src pole:" + to_string(j) + " ";
-         for (int k = 0; k < 4; k++) {
-            cout << "dst pole: " + to_string(k) + " :" + _cache[i][j][k] + "\n";
-         }
-      }
-   }
+   //for (int i = 0; i <= num_discs; i++) {
+   //   cout << "disc:" + to_string(i) + " ";
+   //   for (int j = 0; j < 4; j++) {
+   //      cout << "src pole:" + to_string(j) + " ";
+   //      for (int k = 0; k < 4; k++) {
+   //         cout << "dst pole: " + to_string(k) + " :" + _cache[i][j][k] + "\n";
+   //      }
+   //   }
+   //}
 
    return output;
 }

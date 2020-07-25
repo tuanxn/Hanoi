@@ -20,6 +20,7 @@ private:
 
    std::string lookup_moves(int num_discs, int src, int dst);
    std::string get_moves(int num_discs, int src, int dst, int tmp);
+   void create_vect(int num_discs, int src, int dst);
 public:
    // Use freebie default constructor
    std::string solve(int num_discs, int src, int dst, int tmp);

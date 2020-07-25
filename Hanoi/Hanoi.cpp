@@ -9,31 +9,31 @@
 using namespace std;
 
 
-int main()
-{
-   Hanoi test = Hanoi();
-   test.solve(1, 1, 2, 3);
-   cout << "\n-------\n";
-   test.solve(1, 1, 3, 2);
-   cout << "\n-------\n";
-   test.solve(1, 1, 2, 3);
-   cout << "\n-------\n";
-   test.solve(2, 3, 2, 1);
-   cout << "\n-------\n";
-   test.solve(2, 3, 1, 2);
-   cout << "\n-------\n";
-   test.solve(2, 1, 2, 3);
-   cout << "\n-------\n";
-   test.solve(2, 1, 3, 2);
-   cout << "\n-------\n";
-   test.solve(2, 1, 2, 3);
-   cout << "\n-------\n";
-   test.solve(2, 2, 1, 3);
-   cout << "\n-------\n";
-   test.solve(2, 2, 3, 1);
-   cout << "\n-------\n";
-
-}
+//int main()
+//{
+//   Hanoi test = Hanoi();
+//   test.solve(1, 1, 2, 3);
+//   cout << "\n-------\n";
+//   test.solve(1, 1, 3, 2);
+//   cout << "\n-------\n";
+//   test.solve(1, 1, 2, 3);
+//   cout << "\n-------\n";
+//   test.solve(2, 3, 2, 1);
+//   cout << "\n-------\n";
+//   test.solve(2, 3, 1, 2);
+//   cout << "\n-------\n";
+//   test.solve(2, 1, 2, 3);
+//   cout << "\n-------\n";
+//   test.solve(2, 1, 3, 2);
+//   cout << "\n-------\n";
+//   test.solve(2, 1, 2, 3);
+//   cout << "\n-------\n";
+//   test.solve(2, 2, 1, 3);
+//   cout << "\n-------\n";
+//   test.solve(2, 2, 3, 1);
+//   cout << "\n-------\n";
+//
+//}
 
 std::string Hanoi::lookup_moves(int num_discs, int src, int dst) {
 
@@ -61,7 +61,7 @@ std::string Hanoi::get_moves(int num_discs, int src, int dst, int tmp) {
    string output = "";
    
    if (num_discs == 1) {
-      output += to_string(src) + "->" + to_string(dst) + "\\n";
+      output += to_string(src) + "->" + to_string(dst) + "\n";
 
    }
    else if (num_discs == 0) {
@@ -69,7 +69,7 @@ std::string Hanoi::get_moves(int num_discs, int src, int dst, int tmp) {
    }
    else {
       output += get_moves(num_discs - 1, src, tmp, dst);
-      output += to_string(src) + "->" + to_string(dst) + "\\n";
+      output += to_string(src) + "->" + to_string(dst) + "\n";
       output += get_moves(num_discs - 1, tmp, dst, src);
       _cache[num_discs - 1].clear();
    }
